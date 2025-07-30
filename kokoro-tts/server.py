@@ -3,6 +3,10 @@ import uvicorn
 
 app = FastAPI()
 
+@app.get("/")
+async def root():
+    return {"message": "Kokoro TTS is running!"}
+
 @app.post("/speak")
 async def speak(request: Request):
     data = await request.json()
