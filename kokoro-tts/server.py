@@ -3,6 +3,7 @@ import uvicorn
 
 app = FastAPI()
 
+# ✅ Add this route to fix the 404 at /
 @app.get("/")
 async def root():
     return {"message": "Kokoro TTS is running!"}
@@ -15,3 +16,4 @@ async def speak(request: Request):
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
